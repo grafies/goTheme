@@ -1,13 +1,18 @@
+# 使用方式
+
+```sh
+go get gitee.com/grafies/goTheme
+```
 
 
+# 代码演示
 ```go
-
 package main
 
 import (
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/widget"
-	"fyneGUI/theme"
+	theme "gitee.com/grafies/goTheme"
 )
 
 func main() {
@@ -17,5 +22,4 @@ func main() {
 	w.SetContent(widget.NewLabel("hello"))  //窗口内容
 	w.ShowAndRun()                          //显示窗口
 }
-
 ```
