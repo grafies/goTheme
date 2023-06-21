@@ -1,4 +1,4 @@
-module gitee.com/grafies/goTheme
+module gitee.com/grafies/goTypeface
 
 go 1.20
 

@@ -1,4 +1,4 @@
-package theme
+package goTypeface
 
 import (
 	_ "embed"
