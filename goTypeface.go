@@ -13,26 +13,26 @@ var (
 	NotoSansSC []byte
 )
 
-type MyTheme struct{}
+type GoTypeface struct{}
 
-var _ fyne.Theme = (*MyTheme)(nil)
+var _ fyne.Theme = (*GoTypeface)(nil)
 
 // Font StaticName 为 fonts 目录下的 ttf 类型的字体文件名
-func (m MyTheme) Font(fyne.TextStyle) fyne.Resource {
+func (m GoTypeface) Font(fyne.TextStyle) fyne.Resource {
 	return &fyne.StaticResource{
 		StaticName:    "simhei.ttf",
 		StaticContent: NotoSansSC,
 	}
 }
 
-func (*MyTheme) Color(n fyne.ThemeColorName, v fyne.ThemeVariant) color.Color {
+func (*GoTypeface) Color(n fyne.ThemeColorName, v fyne.ThemeVariant) color.Color {
 	return theme.DefaultTheme().Color(n, v)
 }
 
-func (*MyTheme) Icon(n fyne.ThemeIconName) fyne.Resource {
+func (*GoTypeface) Icon(n fyne.ThemeIconName) fyne.Resource {
 	return theme.DefaultTheme().Icon(n)
 }
 
-func (*MyTheme) Size(n fyne.ThemeSizeName) float32 {
+func (*GoTypeface) Size(n fyne.ThemeSizeName) float32 {
 	return theme.DefaultTheme().Size(n)
 }
