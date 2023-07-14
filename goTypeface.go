@@ -5,6 +5,7 @@ import (
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/theme"
 	"image/color"
+	"runtime"
 )
 
 // 声明静态资源,在打包的时候导入到包里面
@@ -19,8 +20,17 @@ var _ fyne.Theme = (*GoTypeface)(nil)
 
 // Font StaticName 为 fonts 目录下的 ttf 类型的字体文件名
 func (m GoTypeface) Font(fyne.TextStyle) fyne.Resource {
+	var typeface string = "simhei.ttf"
+	sysType := runtime.GOOS
+	if sysType == "windows" {
+		typeface = "C:/Windows/fonts/msyhbd.ttc"
+	}
+	//if sysType == "linux" {
+	//	//typeface = typeface
+	//}
+
 	return &fyne.StaticResource{
-		StaticName:    "simhei.ttf",
+		StaticName:    typeface,
 		StaticContent: NotoSansSC,
 	}
 }
